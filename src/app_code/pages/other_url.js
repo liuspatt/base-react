@@ -14,17 +14,7 @@ class Page extends Component {
         return (
             <_base>
                 <div className="App">
-                    <h2>List cast by api </h2>
-                    {
-                        this.props.cats.map((item) => {
-                            return (
-                                <div>
-                                    <h3>{item.id}</h3>
-                                    <img src={item.url}></img>
-                                </div>
-                            )
-                        })
-                    }
+                    <h2>Just other Url </h2>
                 </div>
             </_base>
         );

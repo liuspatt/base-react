@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PageHtml from './../pages/list';
 // import { connect } from 'react-redux';
 import my_class_app from '../models/my_app';
 
 class Controller extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            cats:[]
+            cats: []
         };
     }
-    
-    componentDidMount=async ()=>{
+
+    componentDidMount = async () => {
         const cats = await my_class_app.getCats();
-        this.setState({cats:cats});
+        this.setState({cats: cats});
         console.log(this.state.cats);
+    }
 
-
-        
-
-	}
-	render(){
+    render() {
         console.log(this.state.cats);
-		return (
-            <PageHtml
-                cats={this.state.cats}
-			/>
-		)
-	}
+        return (
+            <div>
+                <PageHtml
+                    cats={this.state.cats}
+                />
+
+            </div>
+        )
+    }
 }
+
 export default Controller;

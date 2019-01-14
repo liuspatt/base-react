@@ -1,4 +1,3 @@
-
 class my_class_app {
 
     // Some variables
@@ -7,21 +6,21 @@ class my_class_app {
 
 
     constructor() {
-      
+
     }
 
-    async getCats(){
+    async getCats() {
         // vars 
-        let vars_query ={
-            limit:5,
-            page:1,
-            Border:'Desc',
+        let vars_query = {
+            limit: 5,
+            page: 1,
+            Border: 'Desc',
         }
 
         // set vars into the url 
         let request_url = new URL(this.url_api);
         Object.keys(vars_query).forEach(key => request_url.searchParams.append(key, vars_query[key]))
-        
+
         // send the request
         const query = await fetch(request_url.href, {
             method: "GET",
@@ -29,8 +28,8 @@ class my_class_app {
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
-            },            
-            
+            },
+
         });
         const data = await query
         // Debug fetch 
@@ -44,10 +43,10 @@ class my_class_app {
         //   }, function(error) {
         //     error.message //=> String
         //   })
-          .json();
+            .json();
         return data;
     }
-    
+
 }
 
 export default new my_class_app();

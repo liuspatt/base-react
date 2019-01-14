@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 // ===================
 // Import pages 
@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import List from './controllers/list';
 import Redux_data from './controllers/redux_data';
-
+import Other_url from './controllers/other_url';
 
 
 // ===================
@@ -21,11 +21,12 @@ import Redux_data from './controllers/redux_data';
 
 const AppRouter = () => (
     <Router>
-      <div>
-        <Route path="/" exact component={List} />
-        <Route path="/redux/" component={Redux_data} />
-      </div>
+        <div>
+            <Route path="/" exact component={List}/>
+            <Route path="/redux/" component={Redux_data}/>
+            <Route path="/other_url/" component={Other_url}/>
+        </div>
     </Router>
 );
 
-  export default AppRouter;
+export default AppRouter;
