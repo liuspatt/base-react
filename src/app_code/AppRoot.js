@@ -1,4 +1,23 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import { store, persistor } from './libs/redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 import UrlsComponent from './urls';
 
-export default UrlsComponent;
+
+class AppRoot extends Component {
+    
+    render() {
+      return (
+        <Provider store={store}>
+          {/* <PersistGate loading={<Loading/>} persistor={persistor}> */}
+          <UrlsComponent/>
+          {/* <PersistGate persistor={persistor}>
+            
+          </PersistGate> */}
+        </Provider>
+      )
+    }
+  }
+  
+export default AppRoot;

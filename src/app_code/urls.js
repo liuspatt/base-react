@@ -10,9 +10,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // Import pages 
 // ===================
 
-import Home from './pages/home';
-import About from './pages/about';
-import Profile from './pages/profile';
+import List from './controllers/list';
+import Redux_data from './controllers/redux_data';
+
 
 
 // ===================
@@ -22,9 +22,8 @@ import Profile from './pages/profile';
 const AppRouter = () => (
     <Router>
       <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/about/" component={About} />
-        <Route path="/users/" component={Profile} />
+        <Route path="/" exact component={List} />
+        <Route path="/redux/" component={Redux_data} />
       </div>
     </Router>
 );
