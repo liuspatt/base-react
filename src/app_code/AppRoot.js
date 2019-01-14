@@ -11,10 +11,10 @@ class AppRoot extends Component {
       return (
         <Provider store={store}>
           {/* <PersistGate loading={<Loading/>} persistor={persistor}> */}
-          <UrlsComponent/>
-          {/* <PersistGate persistor={persistor}>
-            
-          </PersistGate> */}
+          
+          <PersistGate persistor={persistor}>
+              <UrlsComponent/>  
+          </PersistGate>
         </Provider>
       )
     }
