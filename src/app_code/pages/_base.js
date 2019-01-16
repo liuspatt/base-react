@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 
-import {Route, Link, withRouter} from "react-router-dom";
-import {browserHistory} from 'history'
+import {Link, withRouter} from "react-router-dom";
 import logo from './../../static_files/images/logo.svg';
 import {connect} from 'react-redux'
 
 class Page extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
         
-    }
+    // }
     linkWithCode = () =>{
         this.props.history.push("/other_url");
     };
@@ -18,7 +17,7 @@ class Page extends Component {
         return (
             <div>
                 <div className="header">
-                    <img className="logo" src={logo}></img>
+                    <img alt="logo" className="logo" src={logo}></img>
                     <h1>
                         Base<span>React</span>
                     </h1>

@@ -4,10 +4,10 @@ import {connect} from 'react-redux'
 import my_class_app from '../models/my_app';
 
 class Controller extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
 
     componentDidMount = async () => {
         const cats = await my_class_app.getCats();

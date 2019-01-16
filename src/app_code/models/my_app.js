@@ -5,9 +5,9 @@ class my_class_app {
     text_hi = "this is sparta!!";
 
 
-    constructor() {
+    // constructor() {
 
-    }
+    // }
 
     async getCats() {
         // vars 

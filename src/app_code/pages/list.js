@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import _base from './_base';
+import Base from './_base';
 import './../../static_files/css/list_page.css';
 class Page extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <_base>
+            <Base>
                 <div className="content">
                     <div className="block">
                         <div className="track">
@@ -25,14 +21,14 @@ class Page extends Component {
                                 return (
                                     <div className="item">
                                         <h3>{item.id}</h3>
-                                        <img src={item.url}></img>
+                                        <img alt={item.id} src={item.url}></img>
                                     </div>
                                 )
                             })
                         }
                     </div>
                 </div>
-            </_base>
+            </Base>
         );
     }
 }

@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import _base from './_base';
-
-import logo from './../../static_files/images/logo.svg';
-import './../../static_files/css/app.css';
-import my_class_app from '../models/my_app';
-
+import Base from './_base';
+import './../../static_files/css/list_page.css';
 class Page extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <_base>
+            <Base>
                 <div className="content">
                     <div className="block">
                         <div className="track">
@@ -26,8 +18,7 @@ class Page extends Component {
                         <h2>Just other Url </h2>
                     </div>
                 </div>
-                
-            </_base>
+            </Base>
         );
     }
 }
