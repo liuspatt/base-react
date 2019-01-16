@@ -16,6 +16,12 @@ For run just clone
 
 + npm start 
 
+## Css
+We have some options for load css. 
+Here some options 
+- Global from AppRoot
+
+
 ## Folders 
 
 ### Pages

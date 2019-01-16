@@ -4,7 +4,6 @@ import {Route, Link, withRouter} from "react-router-dom";
 import {browserHistory} from 'history'
 import logo from './../../static_files/images/logo.svg';
 import {connect} from 'react-redux'
-import './../../static_files/css/app.css';
 
 class Page extends Component {
     constructor(props) {
@@ -18,22 +17,25 @@ class Page extends Component {
     render() {
         return (
             <div>
-                <h1>
-                    Base react
-                </h1>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">List </Link>
-                        </li>
-                        <li>
-                            <Link to="/redux/">Redux</Link>
-                        </li>
-                        <li>
-                            <button onClick={this.linkWithCode}>to url by code</button>
-                        </li>
-                    </ul>
-                </nav>
+                <div className="header">
+                    <img className="logo" src={logo}></img>
+                    <h1>
+                        Base<span>React</span>
+                    </h1>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/">List </Link>
+                            </li>
+                            <li>
+                                <Link to="/redux/">Redux</Link>
+                            </li>
+                            <li>
+                                <button onClick={this.linkWithCode}>Btn code</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <div>
                     {this.props.children}
                 </div>

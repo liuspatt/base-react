@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux'
 import {store, persistor} from './libs/redux/store'
 import {PersistGate} from 'redux-persist/integration/react'
-import UrlsComponent from './urls';
+import UrlsComponent from './url';
+
+import '../static_files/css/app.css';
 
 
 
