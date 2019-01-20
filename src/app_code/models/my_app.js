@@ -22,7 +22,7 @@ class my_class_app {
         Object.keys(vars_query).forEach(key => request_url.searchParams.append(key, vars_query[key]))
 
         // send the request
-        const query = await fetch(request_url.href, {
+        const data = await fetch(request_url.href, {
             method: "GET",
             cache: "no-cache",
             headers: {
@@ -30,8 +30,7 @@ class my_class_app {
                 Accept: "application/json"
             },
 
-        });
-        const data = await query
+        })
         // Debug fetch 
         // .then(function(response) {
         //     response.status     //=> number 100–599
@@ -44,6 +43,8 @@ class my_class_app {
         //     error.message //=> String
         //   })
             .json();
+
+
         return data;
     }
 

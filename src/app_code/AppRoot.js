@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux'
-import {store, persistor} from './libs/redux/store'
+import {persistor, store} from './libs/redux/store'
 import {PersistGate} from 'redux-persist/integration/react'
 import UrlsComponent from './url';
 
 import '../static_files/css/app.css';
-
 
 
 class AppRoot extends Component {

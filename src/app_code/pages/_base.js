@@ -7,9 +7,9 @@ import {connect} from 'react-redux'
 class Page extends Component {
     // constructor(props) {
     //     super(props);
-        
+
     // }
-    linkWithCode = () =>{
+    linkWithCode = () => {
         this.props.history.push("/other_url");
     };
 
@@ -42,12 +42,11 @@ class Page extends Component {
         );
     }
 }
+
 const mapStateToProps = (props, state) => {
-  console.log(props);
-  console.log(state);
-  return {
-      
-  }
+    console.log(props);
+    console.log(state);
+    return {}
 }
 
 
