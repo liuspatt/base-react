@@ -13,6 +13,7 @@ class Controller extends Component {
 
     componentDidMount = async () => {
         const cats = await my_class_app.getCats();
+        console.log(cats);
         this.setState({cats: cats});
         console.log(this.state.cats);
     }

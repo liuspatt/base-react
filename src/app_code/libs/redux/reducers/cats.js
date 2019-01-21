@@ -6,6 +6,14 @@ function reducer(state = {list: []}, action) {
 
             return {...state, ...action.payload}
         }
+        case 'ADD_TO_CAT_LIST': {
+            let new_items=action.payload
+            let list_items = new_items.concat(state.list);
+            return Object.assign({}, state, {
+                list: list_items
+            })
+        }
+
         default:
             return state
     }

@@ -20,10 +20,22 @@ class Controller extends Component {
 
     }
 
+    reload = async () => {
+        const cats = await my_class_app.getCats();
+        console.log(cats);
+        // Save data in redux for the redux data page
+        this.props.dispatch({
+            type: 'ADD_TO_CAT_LIST',
+            payload:  cats
+        });
+
+    }
+
     render() {
         console.log(this.props);
         return (
             <PageHtml
+                reload={this.reload}
                 cats={this.props.cats}
             />
         )

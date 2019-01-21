@@ -27,10 +27,11 @@ class Page extends Component {
                             </ul>
                         </div>
                         <h2>List cast by api with redux</h2>
+                        <div onClick={this.props.reload}>RELOAD</div>
                         {
-                            this.props.cats.map((item) => {
+                            this.props.cats.map((item,i) => {
                                 return (
-                                    <div className="item">
+                                    <div className="item" key={i}>
                                         <h3>{item.id}</h3>
                                         <img alt={item.id} src={item.url}></img>
                                     </div>

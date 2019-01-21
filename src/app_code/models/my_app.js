@@ -42,8 +42,7 @@ class my_class_app {
         //   }, function(error) {
         //     error.message //=> String
         //   })
-            .json();
-
+            .then(res => res.json());
 
         return data;
     }
