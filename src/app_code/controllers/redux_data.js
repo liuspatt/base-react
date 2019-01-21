@@ -30,12 +30,11 @@ class Controller extends Component {
     }
 }
 
-const mapStateToProps = (props, state) => {
-    // console.log(props);
+const mapStateToProps = (state) => {
     // console.log(state);
     return {
-        cats: props.cats.list,
-        value: props.reducer_values,
+        cats: state.cats.list,
+        value: state.reducer_values,
     }
 }
 
