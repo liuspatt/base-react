@@ -1,71 +1,41 @@
+import apisauce from 'apisauce'
+
+
 class my_class_app {
 
     // Some variables
     url_api = "https://api.thecatapi.com/v1/images/search";
     text_hi = "this is sparta!!";
+    
+    api = apisauce.create({
+        baseURL: 'https://api.thecatapi.com/v1/images/search',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        timeout: 10000
+    });
 
 
-    // constructor() {
-
-    // }
+    
 
     async getCats() {
-        // vars 
+       // send the request
+
         let vars_query = {
-            limit: 5,
+            limit: 10,
             page: 1,
             Border: 'Desc',
         }
+        let data = await this.api
+                .get('/', vars_query)
+                .then(response => response)
+                .catch(response => response);
+        console.log(data);
 
-        // set vars into the url 
-        let request_url = new URL(this.url_api);
-        Object.keys(vars_query).forEach(key => request_url.searchParams.append(key, vars_query[key]))
-
-        // send the request
-        const data = await fetch(request_url.href, {
-            method: "GET",
-            cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-
-        })
-        // Debug fetch 
-        // .then(function(response) {
-        //     response.status     //=> number 100–599
-        //     response.statusText //=> String
-        //     response.headers    //=> Headers
-        //     response.url        //=> String
-        //     console.log(response);
-        //     return response.text()
-        //   }, function(error) {
-        //     error.message //=> String
-        //   })
-            .then(res => res.json());
-
-        return data;
+        return data.data;
     }
 
-}
+} 
 
 export default new my_class_app();
-
-// #examples api 
-// async setCats(){
-//     const query = await fetch(BASE_API, {
-//         method: "POST",
-//         cache: "no-cache",
-//         headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json"
-//         },
-//         // for post methods
-//         body: JSON.stringify({
-//              email: email,
-//              id_device: "456564564645"
-//         })
-//     });
-//     const data = await query.json();
-//     return data;
-// }
