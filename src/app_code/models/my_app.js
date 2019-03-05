@@ -3,10 +3,6 @@ import apisauce from 'apisauce'
 
 class my_class_app {
 
-    // Some variables
-    url_api = "https://api.thecatapi.com/v1/images/search";
-    text_hi = "this is sparta!!";
-    
     api = apisauce.create({
         baseURL: 'https://api.thecatapi.com/v1/images/search',
         headers: {
@@ -15,6 +11,20 @@ class my_class_app {
         },
         timeout: 10000
     });
+
+    /***** HEADERS *****/
+    setHeaderImages = () => {
+        this.api.setHeader('Content-type', 'multipart/form-data')
+    }
+
+    setHeaderJson = () => {
+        this.api.setHeader('Content-type', 'application/json')
+    }
+
+    setToken = (token) => {
+        this.api.setHeader('Authorization', `Bearer ${token}`)
+    }
+
 
     async getCats() {
        // send the request
