@@ -16,9 +16,6 @@ class my_class_app {
         timeout: 10000
     });
 
-
-    
-
     async getCats() {
        // send the request
 
