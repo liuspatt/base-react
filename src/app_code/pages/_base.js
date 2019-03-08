@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import {Link, withRouter} from "react-router-dom";
 import logo from './../../static_files/images/logo.svg';
-import {connect} from 'react-redux'
 
 class Page extends Component {
     // constructor(props) {
@@ -10,7 +9,7 @@ class Page extends Component {
 
     // }
     linkWithCode = () => {
-        this.props.history.push("/other_url");
+        this.props.history.push("/hook");
     };
 
     render() {
@@ -24,10 +23,10 @@ class Page extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/">List </Link>
+                                <Link to="/">List Raw </Link>
                             </li>
                             <li>
-                                <Link to="/redux/">Redux</Link>
+                                <Link to="/hook/">Hook</Link>
                             </li>
                             <li>
                                 <button onClick={this.linkWithCode}>Btn code</button>
@@ -43,12 +42,8 @@ class Page extends Component {
     }
 }
 
-const mapStateToProps = (props, state) => {
-    console.log(props);
-    console.log(state);
-    return {}
-}
 
 
-export default withRouter(connect(mapStateToProps)(Page))
+
+export default withRouter(Page)
 
