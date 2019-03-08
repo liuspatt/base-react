@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PageHtml from '../pages/redux_data';
+import PageHtml from '../pages/hook_data';
 import my_class_app from '../models/my_app';
 
 class Controller extends Component {

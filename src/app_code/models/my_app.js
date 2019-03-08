@@ -26,6 +26,30 @@ class my_class_app {
     }
 
 
+    updateDataAction = async dispatch => {
+        const data = await this.api.get('/', vars_query);
+        const dataJSON = await data.json();
+        console.log(dataJSON);
+        return dispatch({
+            type: 'SET_DATA',
+            payload: dataJSON._embedded.episodes
+        });
+    }
+
+    toggleFavAction = (episode, state, dispatch) => {
+        const episodeInFavourites = state.favourites.includes(episode);
+        let dispatchObj = {
+          type: 'ADD_LIST',
+          payload: episode
+        };
+        if (episodeInFavourites)
+          dispatchObj = {
+            type: 'REMOVE_LIST',
+            payload: state.favourites.filter(fav => fav.id !== episode.id)
+          };
+        return dispatch(dispatchObj);
+    }
+
     async getCats() {
        // send the request
 
