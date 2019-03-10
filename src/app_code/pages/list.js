@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Base from './_base';
+import ListCats from './inners/list_cats';
 import './../../static_files/css/list_page.css';
 
 class Page extends Component {
@@ -19,16 +20,10 @@ class Page extends Component {
                             </ul>
                         </div>
                         <h2>List cast by api </h2>
-                        {
-                            this.props.cats.map((item,i) => {
-                                return (
-                                    <div className="item" key={i}>
-                                        <h3>{item.id}</h3>
-                                        <img alt={item.id} src={item.url}></img>
-                                    </div>
-                                )
-                            })
-                        }
+                        <ListCats
+                            list_cats={this.props.cats}
+                        ></ListCats>
+                       
                     </div>
                 </div>
             </Base>
