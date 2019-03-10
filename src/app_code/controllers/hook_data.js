@@ -1,35 +1,60 @@
 import React, {Component} from 'react';
 import PageHtml from '../pages/hook_data';
-import my_class_app from '../models/my_app';
+import m_api from '../models/my_app';
+import {Store} from '../hooks/main_store';
 
-class Controller extends Component {
-    // constructor(props) {
-    //     super(props);
+function Controller(){
+    const { state, dispatch } = React.useContext(Store);
 
-    // }
+    React.useEffect(() => {
+        state.list_cats.length === 0 && m_api.updateDataAction(dispatch);
+    }, [state]);
 
-    componentDidMount = async () => {
-        const cats = await my_class_app.getCats();
-        console.log(cats);
-        // Save data in redux for the redux data page 
-    }
+    const props = {
+        list_cats: state.list_cats,
+        state: { state, dispatch },
+        // toggleFavAction,
+        // favourites: state.favourites
+    };
 
-    reload = async () => {
-        const cats = await my_class_app.getCats();
-        console.log(cats);
-        // Save data in redux for the redux data page
-    }
 
-    render() {
-        console.log(this.props);
-        return (
-            <PageHtml
-                reload={this.reload}
-                cats={this.props.cats}
-            />
-        )
-    }
+    return (
+        <PageHtml
+            // reload={this.reload}
+            cats={props.list_cats}
+
+        />
+    );
 }
+// class Controller extends Component {
+//
+//
+//     constructor(props) {
+//         super(props);
+//         console.log("hi");
+//         const { state, dispatch } = React.useContext(Store);
+//     }
+//
+//     componentDidMount = async () => {
+//         console.log("hi");
+//         // Save data in redux for the redux data page
+//     }
+//
+//     reload = async () => {
+//         console.log("hi");
+//         // Save data in redux for the redux data page
+//     }
+//
+//     render() {
+//         return (
+//             <PageHtml
+//                 reload={this.reload}
+//                 cats={this.state.list_cats}
+//
+//             />
+//         )
+//     }
+// }
 
 
 

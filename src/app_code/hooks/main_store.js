@@ -3,18 +3,18 @@ import React from 'react';
 export const Store = React.createContext();
 
 const initialState = {
-  episodes: [],
-  favourites: []
+  list_cats: [],
+  list_saved: []
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case 'SET_DATA':
-      return { ...state, episodes: action.payload };
+      return { ...state, list_cats: action.payload };
     case 'ADD_SAVE':
       return {
         ...state,
-        favourites: [...state.favourites, action.payload]
+        favourites: [...state.list_saved, action.payload]
       };
     case 'REMOVE_SAVE':
       return {

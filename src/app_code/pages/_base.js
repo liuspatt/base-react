@@ -9,7 +9,7 @@ class Page extends Component {
 
     // }
     linkWithCode = () => {
-        this.props.history.push("/hook");
+        this.props.history.push("/other");
     };
 
     render() {

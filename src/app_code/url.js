@@ -6,7 +6,7 @@ import React from 'react'
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import List from './controllers/list';
-import Redux_data from './controllers/hook_data';
+import Hook_data from './controllers/hook_data';
 import Other_url from './controllers/other_url';
 
 // ===================
@@ -29,8 +29,8 @@ const AppRouter = () => (
     <BrowserRouter>
         <Switch>
             <Route path="/" exact component={List}/>
-            <Route path="/redux/" component={Redux_data}/>
-            <Route path="/hook/" component={Other_url}/>
+            <Route path="/hook/" component={Hook_data}/>
+            <Route path="/other/" component={Other_url}/>
             <Route component={Page404}/>
         </Switch>
     </BrowserRouter>

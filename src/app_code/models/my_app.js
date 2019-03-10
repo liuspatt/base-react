@@ -27,12 +27,20 @@ class my_class_app {
 
 
     updateDataAction = async dispatch => {
-        const data = await this.api.get('/', vars_query);
-        const dataJSON = await data.json();
-        console.log(dataJSON);
+        let vars_query = {
+            limit: 10,
+            page: 1,
+            Border: 'Desc',
+        }
+        let data = await this.api
+            .get('/', vars_query)
+            .then(response => response)
+            .catch(response => response);
+        console.log(data);
+
         return dispatch({
             type: 'SET_DATA',
-            payload: dataJSON._embedded.episodes
+            payload: data.data
         });
     }
 

@@ -1,13 +1,20 @@
 # Base-react
 Light and intuitive react base. For start new projects.
 
-+ Redux and redux-persist
++ Hooks ( repalce redux )
+
 + Routing
 + Simple and solid "template engine" ( is just folders and imports )
 
 + Pages with the html 
 + Controllers with mechanics
 + Models 
+
+
++ Persist ( TODO  )
+
+- Removed
++ Redux and redux-persist ( removed )
 
 ## Run 
 For run just clone
