@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PageHtml from './../pages/list';
-// import { connect } from 'react-redux';
 import my_class_app from '../models/my_app';
 
 class Controller extends Component {

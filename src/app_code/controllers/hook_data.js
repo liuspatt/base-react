@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PageHtml from '../pages/hook_data';
 import m_api from '../models/my_app';
 import {Store} from '../hooks/main_store';
@@ -26,37 +26,6 @@ function Controller(){
         />
     );
 }
-// class Controller extends Component {
-//
-//
-//     constructor(props) {
-//         super(props);
-//         console.log("hi");
-//         const { state, dispatch } = React.useContext(Store);
-//     }
-//
-//     componentDidMount = async () => {
-//         console.log("hi");
-//         // Save data in redux for the redux data page
-//     }
-//
-//     reload = async () => {
-//         console.log("hi");
-//         // Save data in redux for the redux data page
-//     }
-//
-//     render() {
-//         return (
-//             <PageHtml
-//                 reload={this.reload}
-//                 cats={this.state.list_cats}
-//
-//             />
-//         )
-//     }
-// }
-
-
 
 export default Controller;
-// export default Controller;
+
