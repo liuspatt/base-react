@@ -3,8 +3,8 @@ import PageHtml from '../pages/hook_data';
 import m_api from '../models/my_app';
 import {Store} from '../hooks/main_store';
 
-function Controller(){
-    const { state, dispatch } = React.useContext(Store);
+function Controller() {
+    const {state, dispatch} = React.useContext(Store);
 
     React.useEffect(() => {
         state.list_cats.length === 0 && m_api.updateDataAction(dispatch);
@@ -12,7 +12,7 @@ function Controller(){
 
     const props = {
         list_cats: state.list_cats,
-        state: { state, dispatch },
+        state: {state, dispatch},
         // toggleFavAction,
         // favourites: state.favourites
     };

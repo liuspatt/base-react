@@ -23,7 +23,7 @@ class Page extends Component {
                         <ListCats
                             list_cats={this.props.cats}
                         ></ListCats>
-                       
+
                     </div>
                 </div>
             </Base>

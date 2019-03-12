@@ -43,7 +43,5 @@ class Page extends Component {
 }
 
 
-
-
 export default withRouter(Page)
 
