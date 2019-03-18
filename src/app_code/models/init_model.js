@@ -5,15 +5,12 @@ import {Store} from '../hooks/main_store';
 function Controller() {
     const {state, dispatch} = React.useContext(Store);
    
+    // Init dispatch for model or models 
     React.useEffect(() => {
-        if(!m_api.set_dispatch()){
+        if(!m_api.get_dispatch()){
             m_api.set_dispatch(dispatch)
         }
-        console.log("set dispatch");
-        console.log(state);
     }, [state]);
-
-
 
     return (
         <React.Fragment></React.Fragment>

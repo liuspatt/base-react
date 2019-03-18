@@ -4,7 +4,7 @@ export default function inner(props) {
     const {list_cats} = props;
     return (
         <React.Fragment>
-            <div class="list_cats">
+            <div className="list_cats">
                 {
                     list_cats.map((item, i) => {
                         return (
