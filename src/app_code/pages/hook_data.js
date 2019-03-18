@@ -4,6 +4,9 @@ import ListCats from './inners/list_cats';
 import './../../static_files/css/list_page.css';
 
 class Page extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <Base>
@@ -27,6 +30,7 @@ class Page extends Component {
                                 </li>
                             </ul>
                         </div>
+                        <button onClick={this.props.reload}>reload </button>
                         <h2>List cast by api with redux</h2>
                         <ListCats
                             list_cats={this.props.cats}

@@ -7,11 +7,15 @@ function Controller() {
     const {state, dispatch} = React.useContext(Store);
 
     React.useEffect(() => {
+        // only run one time
         if(state.list_cats.length === 0){
             m_api.updateDataAction();
         }
     }, [state]);
 
+    const reload = () => { 
+        m_api.updateDataAction();
+    }
     const props = {
         list_cats: state.list_cats,
         state: {state, dispatch},
@@ -22,8 +26,10 @@ function Controller() {
 
     return (
         <PageHtml
-            // reload={this.reload}
-            cats={props.list_cats}
+            showReload = {true}
+            reload = {reload}
+            cats   = {props.list_cats}
+
 
         />
     );
