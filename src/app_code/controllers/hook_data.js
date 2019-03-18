@@ -7,7 +7,9 @@ function Controller() {
     const {state, dispatch} = React.useContext(Store);
 
     React.useEffect(() => {
-        state.list_cats.length === 0 && m_api.updateDataAction(dispatch);
+        if(state.list_cats.length === 0){
+            m_api.updateDataAction();
+        }
     }, [state]);
 
     const props = {

@@ -1,7 +1,14 @@
-import apisauce from 'apisauce'
-
+import apisauce from 'apisauce';
 
 class my_class_app {
+
+    /*
+    * Set / get dispatch needs init in app root 
+    */
+    dispatch = null;
+    get_dispatch = () => {return this.dispatch==null?false:this.dispatch;}
+    set_dispatch = (n_dispatch) => {this.dispatch=n_dispatch;}    
+    /* End dispatch set */
 
     api = apisauce.create({
         baseURL: 'https://api.thecatapi.com/v1/images/search',
@@ -26,7 +33,7 @@ class my_class_app {
     }
 
 
-    updateDataAction = async dispatch => {
+    updateDataAction = async () => {
         let vars_query = {
             limit: 10,
             page: 1,
@@ -38,25 +45,13 @@ class my_class_app {
             .catch(response => response);
         console.log(data);
 
-        return dispatch({
+        console.log(this.dispatch);
+        return this.dispatch({
             type: 'SET_DATA',
             payload: data.data
         });
     }
 
-    toggleFavAction = (episode, state, dispatch) => {
-        const episodeInFavourites = state.favourites.includes(episode);
-        let dispatchObj = {
-            type: 'ADD_LIST',
-            payload: episode
-        };
-        if (episodeInFavourites)
-            dispatchObj = {
-                type: 'REMOVE_LIST',
-                payload: state.favourites.filter(fav => fav.id !== episode.id)
-            };
-        return dispatch(dispatchObj);
-    }
 
     async getCats() {
         // send the request
