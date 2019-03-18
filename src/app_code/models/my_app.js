@@ -45,7 +45,6 @@ class my_class_app {
             .catch(response => response);
         console.log(data);
 
-        console.log(this.dispatch);
         return this.dispatch({
             type: 'SET_DATA',
             payload: data.data
