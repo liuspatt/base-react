@@ -23,14 +23,11 @@ function Controller() {
         // favourites: state.favourites
     };
 
-
     return (
         <PageHtml
             showReload = {true}
             reload = {reload}
             cats   = {props.list_cats}
-
-
         />
     );
 }
